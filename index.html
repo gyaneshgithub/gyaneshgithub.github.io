@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyanesh Kumar Maurya — Development Manager at SAP Labs India</title>
+  <meta name="description" content="Gyanesh Kumar Maurya — Development Manager at SAP Labs India Pvt Ltd. Portfolio, projects, and experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-card: #0f0f0f;
+      --bg-card-hover: #161616;
+      --text: #e4e4e7;
+      --text-secondary: #a1a1aa;
+      --text-muted: #52525b;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --accent-glow: rgba(99, 102, 241, 0.15);
+      --border: #1c1c1e;
+      --border-hover: #2a2a2e;
+      --green: #22c55e;
+      --cyan: #06b6d4;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── Nav ─── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(5,5,5,0.8);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 56px;
+    }
+    .nav-logo { font-size: 15px; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.3px; }
+    .nav-logo span { color: var(--accent-light); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ─── Hero ─── */
+    .hero { padding: 140px 0 80px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; display: flex; align-items: center; gap: 48px; }
+    .hero-text { flex: 1; }
+    .hero-photo {
+      width: 200px; height: 200px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      border: 3px solid var(--border); box-shadow: 0 0 60px var(--accent-glow);
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg-card); font-size: 64px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border: 1px solid var(--border); border-radius: 20px;
+      font-size: 12px; color: var(--accent-light); margin-bottom: 28px;
+      letter-spacing: 0.5px; font-weight: 500;
+    }
+    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hero h1 {
+      font-size: 52px; font-weight: 800; letter-spacing: -2px; line-height: 1.1; margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff 0%, #71717a 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-title-accent {
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--cyan) 100%) !important;
+      -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important;
+    }
+    .hero-subtitle { font-size: 17px; color: var(--text-secondary); max-width: 640px; line-height: 1.8; margin-bottom: 12px; }
+    .hero-meta { font-size: 14px; color: var(--text-muted); margin-bottom: 36px; }
+    .hero-meta span { margin: 0 8px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 10px; font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; font-family: inherit;
+    }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 0 20px var(--accent-glow); }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--border-hover); color: var(--text); background: var(--bg-card); }
+
+    /* ─── Stats ─── */
+    .stats-strip {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
+      background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin: 60px 0;
+    }
+    .stat { background: var(--bg-card); padding: 28px 20px; text-align: center; }
+    .stat-value {
+      font-size: 32px; font-weight: 800; letter-spacing: -1px;
+      background: linear-gradient(135deg, var(--text) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+
+    /* ─── Sections ─── */
+    section { padding: 80px 0; }
+    .section-header { margin-bottom: 48px; }
+    .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--accent-light); margin-bottom: 12px; font-family: 'JetBrains Mono', monospace; }
+    .section-title { font-size: 36px; font-weight: 800; letter-spacing: -1px; }
+    .section-desc { font-size: 15px; color: var(--text-muted); margin-top: 8px; max-width: 560px; }
+    .divider { height: 1px; background: var(--border); }
+
+    /* ─── Timeline ─── */
+    .timeline { position: relative; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, var(--accent) 0%, var(--border) 100%); }
+    .timeline-item { padding-left: 36px; padding-bottom: 48px; position: relative; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before { content: ''; position: absolute; left: -4px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+    .timeline-date { font-size: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-bottom: 6px; }
+    .timeline-role { font-size: 18px; font-weight: 700; margin-bottom: 2px; }
+    .timeline-company { font-size: 14px; color: var(--accent-light); font-weight: 500; margin-bottom: 4px; }
+    .timeline-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+    .timeline-desc li { margin-bottom: 6px; list-style: none; position: relative; padding-left: 16px; }
+    .timeline-desc li::before { content: '▸'; position: absolute; left: 0; color: var(--text-muted); }
+
+    /* ─── Cards ─── */
+    .project-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .project-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px;
+      text-decoration: none; color: var(--text); transition: all 0.25s; display: flex; flex-direction: column;
+    }
+    .project-card:hover { border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+    .project-icon { font-size: 24px; margin-bottom: 14px; }
+    .project-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .project-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; flex: 1; }
+    .project-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 16px; }
+
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 500; font-family: 'JetBrains Mono', monospace; background: rgba(99,102,241,0.1); color: var(--accent-light); }
+
+    /* ─── Stack ─── */
+    .stack-categories { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .stack-category h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 12px; }
+    .stack-items { display: flex; gap: 8px; flex-wrap: wrap; }
+    .stack-item { padding: 8px 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; font-weight: 500; transition: all 0.2s; }
+    .stack-item:hover { border-color: var(--accent); color: var(--accent-light); }
+
+    /* ─── Contact ─── */
+    .contact-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .contact-card {
+      text-align: center; padding: 28px 20px; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; text-decoration: none; color: var(--text); transition: all 0.2s;
+    }
+    .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 20px var(--accent-glow); }
+    .contact-label { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+    .contact-value { font-size: 12px; color: var(--text-muted); }
+
+    /* ─── Footer ─── */
+    footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--border); }
+    footer p { font-size: 12px; color: var(--text-muted); }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent-light); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 34px; letter-spacing: -1px; }
+      .hero-content { flex-direction: column-reverse; text-align: center; }
+      .hero-photo { width: 150px; height: 150px; font-size: 48px; }
+      .hero-actions { justify-content: center; }
+      .stats-strip { grid-template-columns: repeat(2,1fr); }
+      .project-grid { grid-template-columns: repeat(2,1fr); }
+      .stack-categories { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: repeat(2,1fr); }
+      .nav-links { display: none; }
+      .section-title { font-size: 28px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 28px; }
+      .project-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">GKM<span>.</span></a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge"><span class="dot"></span> Development Manager at SAP Labs India</div>
+        <h1>Gyanesh Kumar<br><span class="hero-title-accent">Maurya</span></h1>
+        <p class="hero-subtitle">
+          Development Manager at SAP Labs India with <strong>16+ years</strong> building and leading
+          enterprise software — from capital-markets trading platforms at Wells Fargo and
+          prime-brokerage systems at J.P. Morgan to large-scale product engineering at SAP.
+          I lead teams, own delivery end-to-end, and care deeply about clean architecture,
+          engineering quality, and growing people.
+        </p>
+        <p class="hero-meta">
+          Bengaluru, India <span>&middot;</span> SAP Labs India Pvt Ltd <span>&middot;</span> Development Manager
+        </p>
+        <div class="hero-actions">
+          <a href="https://github.com/gyaneshgithub" class="btn btn-primary" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/gyanesh-kumar-maurya/" class="btn btn-ghost" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-photo">👤</div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="container">
+    <div class="stats-strip">
+      <div class="stat"><div class="stat-value">16+</div><div class="stat-label">Years Exp</div></div>
+      <div class="stat"><div class="stat-value">5</div><div class="stat-label">Companies</div></div>
+      <div class="stat"><div class="stat-value">7</div><div class="stat-label">Roles Held</div></div>
+      <div class="stat"><div class="stat-value">65</div><div class="stat-label">Public Repos</div></div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">// experience</div>
+        <h2 class="section-title">Where I've Worked</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 2025 – Present</div>
+          <div class="timeline-role">Development Manager</div>
+          <div class="timeline-company">SAP Labs India</div>
+          <ul class="timeline-desc">
+            <li>Leading and supporting teams with multiple topics ownership, driving firm initiatives, and enhancing development and quality processes.</li>
+            <li>Mentoring teams and individuals to add value to assigned areas.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Apr 2023 – Dec 2024</div>
+          <div class="timeline-role">Development Specialist</div>
+          <div class="timeline-company">SAP Labs India</div>
+          <ul class="timeline-desc">
+            <li>Managing and supporting teams with multiple topics ownership.</li>
+            <li>Driving firm initiatives and contributing to development &amp; quality processes for the organization.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">May 2019 – Mar 2023</div>
+          <div class="timeline-role">Senior Developer</div>
+          <div class="timeline-company">SAP Labs India</div>
+          <ul class="timeline-desc">
+            <li>Successfully delivered features on time while collaborating across teams to maintain quality.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Jun 2018 – May 2019</div>
+          <div class="timeline-role">Senior Developer (Capital Markets)</div>
+          <div class="timeline-company">Wells Fargo India Solutions Private Ltd</div>
+          <ul class="timeline-desc">
+            <li>Domain: Capital Markets — Muni Bonds and Securities.</li>
+            <li>Worked on the trader side of the application, focusing on bond/securities pricing.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Aug 2015 – Apr 2018</div>
+          <div class="timeline-role">Application Developer</div>
+          <div class="timeline-company">J.P. Morgan</div>
+          <ul class="timeline-desc">
+            <li>Domain: Prime Brokerage, Custody Business.</li>
+            <li>Individual contributor role — gathering and analysing business requirements and delivery.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Apr 2013 – Jun 2015</div>
+          <div class="timeline-role">Consultant</div>
+          <div class="timeline-company">Deloitte US India Pvt Limited</div>
+          <ul class="timeline-desc">
+            <li>Application Developer.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Oct 2010 – Apr 2013</div>
+          <div class="timeline-role">Senior Systems Engineer</div>
+          <div class="timeline-company">Infosys</div>
+          <ul class="timeline-desc">
+            <li>Worked on the Equifax Interconnect decision-generating platform, customizing products with Versata and building business rules with ILOG.</li>
+            <li>Developed Crystal Reports, designed request/response XML, and enhanced application performance using Spring Framework and Oracle Database.</li>
+            <li>Handled the application end-to-end from QA to UAT to Production.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">// projects</div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-desc">Things I've built and maintain.</p>
+      </div>
+      <div class="project-grid">
+        <a href="https://github.com/gyaneshgithub" class="project-card" target="_blank">
+          <div class="project-icon">🚀</div>
+          <h3>Project One</h3>
+          <p>A short description of what this project does and why it's useful.</p>
+          <div class="project-tags"><span class="tag">TypeScript</span><span class="tag">React</span></div>
+        </a>
+        <a href="https://github.com/gyaneshgithub" class="project-card" target="_blank">
+          <div class="project-icon">⚡</div>
+          <h3>Project Two</h3>
+          <p>A short description of what this project does and why it's useful.</p>
+          <div class="project-tags"><span class="tag">Python</span><span class="tag">FastAPI</span></div>
+        </a>
+        <a href="https://github.com/gyaneshgithub" class="project-card" target="_blank">
+          <div class="project-icon">🧠</div>
+          <h3>Project Three</h3>
+          <p>A short description of what this project does and why it's useful.</p>
+          <div class="project-tags"><span class="tag">AI</span><span class="tag">ML</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Stack -->
+  <section id="stack">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">// stack</div>
+        <h2 class="section-title">Technologies</h2>
+      </div>
+      <div class="stack-categories">
+        <div class="stack-category">
+          <h3>Languages</h3>
+          <div class="stack-items">
+            <div class="stack-item">Python</div><div class="stack-item">JavaScript</div>
+            <div class="stack-item">TypeScript</div><div class="stack-item">SQL</div>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h3>Frameworks</h3>
+          <div class="stack-items">
+            <div class="stack-item">React</div><div class="stack-item">Next.js</div>
+            <div class="stack-item">FastAPI</div><div class="stack-item">Node.js</div>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h3>Cloud & Infra</h3>
+          <div class="stack-items">
+            <div class="stack-item">Docker</div><div class="stack-item">Kubernetes</div>
+            <div class="stack-item">AWS</div><div class="stack-item">GitHub Actions</div>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h3>Practices</h3>
+          <div class="stack-items">
+            <div class="stack-item">System Design</div><div class="stack-item">Agile</div>
+            <div class="stack-item">Mentoring</div><div class="stack-item">Technical Writing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">// contact</div>
+        <h2 class="section-title">Let's Connect</h2>
+      </div>
+      <div class="contact-grid">
+        <a href="https://github.com/gyaneshgithub" class="contact-card" target="_blank">
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">gyaneshgithub</div>
+        </a>
+        <a href="https://www.linkedin.com/in/gyanesh-kumar-maurya/" class="contact-card" target="_blank">
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">gyanesh-kumar-maurya</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Gyanesh Kumar Maurya &nbsp;&middot;&nbsp; Built with HTML &amp; CSS</p>
+    </div>
+  </footer>
+
+</body>
+</html>
