@@ -147,6 +147,10 @@
 
     .tag { font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 500; font-family: 'JetBrains Mono', monospace; background: rgba(99,102,241,0.1); color: var(--accent-light); }
 
+    .projects-more { margin-top: 24px; }
+    .projects-more a { font-size: 13px; color: var(--accent-light); text-decoration: none; font-family: 'JetBrains Mono', monospace; }
+    .projects-more a:hover { text-decoration: underline; }
+
     /* ─── Stack ─── */
     .stack-categories { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
     .stack-category h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 12px; }
@@ -321,28 +325,47 @@
       <div class="section-header">
         <div class="section-label">// projects</div>
         <h2 class="section-title">Projects</h2>
-        <p class="section-desc">Things I've built and maintain.</p>
+        <p class="section-desc">Selected work from my GitHub — simulators, enterprise prototypes, and big-data experiments.</p>
       </div>
       <div class="project-grid">
-        <a href="https://github.com/gyaneshgithub" class="project-card" target="_blank">
-          <div class="project-icon">🚀</div>
-          <h3>Project One</h3>
-          <p>A short description of what this project does and why it's useful.</p>
-          <div class="project-tags"><span class="tag">TypeScript</span><span class="tag">React</span></div>
+        <a href="https://github.com/gyaneshgithub/NasaExploration" class="project-card" target="_blank">
+          <div class="project-icon">🛰️</div>
+          <h3>Mars Rover Explorer</h3>
+          <p>Java take on NASA's Mars Rover problem — plateau, coordinates and move/rotate commands modelled with the Command pattern, backed by JUnit tests.</p>
+          <div class="project-tags"><span class="tag">Java</span><span class="tag">Maven</span><span class="tag">JUnit</span></div>
         </a>
-        <a href="https://github.com/gyaneshgithub" class="project-card" target="_blank">
-          <div class="project-icon">⚡</div>
-          <h3>Project Two</h3>
-          <p>A short description of what this project does and why it's useful.</p>
-          <div class="project-tags"><span class="tag">Python</span><span class="tag">FastAPI</span></div>
+        <a href="https://github.com/gyaneshgithub/IngProjectLink" class="project-card" target="_blank">
+          <div class="project-icon">🏧</div>
+          <h3>ATM Locator Service</h3>
+          <p>Spring Boot web app that finds nearby ATMs by geo-location, with clean controller / service / DAO layers and a lightweight JS front end.</p>
+          <div class="project-tags"><span class="tag">Spring Boot</span><span class="tag">REST</span><span class="tag">Thymeleaf</span></div>
         </a>
-        <a href="https://github.com/gyaneshgithub" class="project-card" target="_blank">
-          <div class="project-icon">🧠</div>
-          <h3>Project Three</h3>
-          <p>A short description of what this project does and why it's useful.</p>
-          <div class="project-tags"><span class="tag">AI</span><span class="tag">ML</span></div>
+        <a href="https://github.com/gyaneshgithub/Project-MusicDataAnalysis" class="project-card" target="_blank">
+          <div class="project-icon">🎧</div>
+          <h3>Music Data Analysis</h3>
+          <p>End-to-end big-data pipeline for music listening data — Hive/HBase schemas and enrichment scripts feeding Spark jobs written in Scala.</p>
+          <div class="project-tags"><span class="tag">Spark</span><span class="tag">Scala</span><span class="tag">Hive</span></div>
+        </a>
+        <a href="https://github.com/gyaneshgithub/Project2DevelopmentAnalysis" class="project-card" target="_blank">
+          <div class="project-icon">📊</div>
+          <h3>State-wise Development Analysis</h3>
+          <p>Hadoop job that filters districts where 80%+ of households live below the poverty line, as part of a state-wise development study across India.</p>
+          <div class="project-tags"><span class="tag">Hadoop</span><span class="tag">Java</span><span class="tag">MapReduce</span></div>
+        </a>
+        <a href="https://github.com/gyaneshgithub/Project1USACrimeAnalysis" class="project-card" target="_blank">
+          <div class="project-icon">🔍</div>
+          <h3>USA Crime Analysis</h3>
+          <p>Distributed analysis of open US crime datasets on Hadoop, with the methodology and findings written up in a detailed project report.</p>
+          <div class="project-tags"><span class="tag">Hadoop</span><span class="tag">Data Analysis</span></div>
+        </a>
+        <a href="https://github.com/gyaneshgithub/sap-ui5-walkthrough" class="project-card" target="_blank">
+          <div class="project-icon">🎨</div>
+          <h3>SAP UI5 Walkthrough</h3>
+          <p>Hands-on run through the official SAP UI5 walkthrough — MVC app structure, data binding, routing and working with OData models.</p>
+          <div class="project-tags"><span class="tag">SAPUI5</span><span class="tag">OData</span><span class="tag">JavaScript</span></div>
         </a>
       </div>
+      <p class="projects-more"><a href="https://github.com/gyaneshgithub?tab=repositories" target="_blank">Browse all repositories &rarr;</a></p>
     </div>
   </section>
 
@@ -359,29 +382,33 @@
         <div class="stack-category">
           <h3>Languages</h3>
           <div class="stack-items">
-            <div class="stack-item">Python</div><div class="stack-item">JavaScript</div>
-            <div class="stack-item">TypeScript</div><div class="stack-item">SQL</div>
+            <div class="stack-item">Java</div><div class="stack-item">JavaScript</div>
+            <div class="stack-item">SQL</div><div class="stack-item">Python</div>
+            <div class="stack-item">Scala</div>
           </div>
         </div>
         <div class="stack-category">
-          <h3>Frameworks</h3>
+          <h3>SAP</h3>
           <div class="stack-items">
-            <div class="stack-item">React</div><div class="stack-item">Next.js</div>
-            <div class="stack-item">FastAPI</div><div class="stack-item">Node.js</div>
+            <div class="stack-item">ABAP</div><div class="stack-item">SAPUI5 / Fiori</div>
+            <div class="stack-item">SAP BTP</div><div class="stack-item">CAP</div>
+            <div class="stack-item">SAP HANA</div><div class="stack-item">OData</div>
           </div>
         </div>
         <div class="stack-category">
-          <h3>Cloud & Infra</h3>
+          <h3>Data &amp; Big Data</h3>
           <div class="stack-items">
-            <div class="stack-item">Docker</div><div class="stack-item">Kubernetes</div>
-            <div class="stack-item">AWS</div><div class="stack-item">GitHub Actions</div>
+            <div class="stack-item">Hadoop</div><div class="stack-item">Hive</div>
+            <div class="stack-item">HBase</div><div class="stack-item">Spark</div>
+            <div class="stack-item">Pig</div><div class="stack-item">Oracle DB</div>
           </div>
         </div>
         <div class="stack-category">
-          <h3>Practices</h3>
+          <h3>Engineering</h3>
           <div class="stack-items">
-            <div class="stack-item">System Design</div><div class="stack-item">Agile</div>
-            <div class="stack-item">Mentoring</div><div class="stack-item">Technical Writing</div>
+            <div class="stack-item">Spring Boot</div><div class="stack-item">Maven</div>
+            <div class="stack-item">JUnit</div><div class="stack-item">Git</div>
+            <div class="stack-item">Agile / Scrum</div><div class="stack-item">CI/CD</div>
           </div>
         </div>
       </div>
